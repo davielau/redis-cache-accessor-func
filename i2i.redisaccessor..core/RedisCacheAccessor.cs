@@ -16,6 +16,14 @@ namespace i2i.redisaccessor.core
             log = loggerFactory.CreateLogger("RedisCacheAccessor");
         }
        
+        /// <summary>
+        /// Read and write from the redis cache
+        /// </summary>
+        /// <param name="cacheConnectionString"></param>
+        /// <param name="reqMethod"></param>
+        /// <param name="cacheKey"></param>
+        /// <param name="cacheValue"></param>
+        /// <returns>Returns the cache value for GET requests and the cache key for PUT requests</returns>
         public string ReadWriteFromCache(string cacheConnectionString, string reqMethod, string cacheKey, string cacheValue)
         {
             IDatabase dbCache = _cacheConnector.getDbCache(cacheConnectionString);

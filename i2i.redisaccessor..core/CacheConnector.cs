@@ -12,6 +12,12 @@ namespace i2i.redisaccessor.core
         /// </summary>
         private static Dictionary<string, ConnectionMultiplexer> redisConnections;
         
+        /// <summary>
+        /// Returns the instance of the redis cache based on the cache 
+        /// connection string passed in.
+        /// </summary>
+        /// <param name="cacheConnectionString"></param>
+        /// <returns>Instance of the redis cache</returns>
         public IDatabase getDbCache(string cacheConnectionString)
         { 
             //instantiate dictionary if null
